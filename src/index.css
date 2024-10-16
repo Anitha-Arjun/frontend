@@ -14,11 +14,11 @@
 }
 
 form {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-form input{
+form input {
   margin-top: 2em;
 }
 
@@ -34,7 +34,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
