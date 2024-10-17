@@ -19,13 +19,16 @@ export default function ProjectsPage({ projects, setProjects }) {
     try {
       e.preventDefault();
       // make POST request to create new project
-      const res = await fetch("http://localhost:4000/api/projects/", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/projects/`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
 
       // parse data to json
       const data = await res.json();
@@ -87,7 +90,7 @@ export default function ProjectsPage({ projects, setProjects }) {
   );
 }
 
-// Refer for propTypes -- https://www.npmjs.com/package/prop-types
+// https://www.npmjs.com/package/prop-types
 ProjectsPage.propTypes = {
   projects: PropTypes.array,
   setProjects: PropTypes.func,
